@@ -87,7 +87,8 @@ export default class App extends React.Component {
         <Text style={styles.label}>{this.state.timeInYears} years from now you will still have ${parseFloat(this.state.amount).toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}, but it will only be worth ${parseFloat(this.state.afterInflation).toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}.</Text>
         <Text style={styles.label}>But if you invest it at a risk free rate you will have ${parseFloat(this.state.atRiskFree).toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}.</Text>
         <Text style={styles.label}>Which will be worth ${parseFloat(this.state.atRiskFreeAfterInflation).toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')} after inflation.</Text>
-        
+        <Button title='Generate Crash' 
+                onPress={()=>{throw new Error('Generating Manual Error')}}/>
       </View>
     );
   }
